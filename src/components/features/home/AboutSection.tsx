@@ -1,8 +1,43 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
+import { motion, useInView } from "framer-motion";
 import { GlassCard } from "@/components/ui";
 import { aboutStats } from "@/lib/constants";
+
+function AnimatedCounter({ value, className }: { value: string; className: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const [display, setDisplay] = useState(0);
+
+  // Parse "50+" → { num: 50, suffix: "+" }
+  const match = value.match(/^(\d+)(.*)$/);
+  const target = match ? parseInt(match[1], 10) : 0;
+  const suffix = match ? match[2] : value;
+
+  useEffect(() => {
+    if (!isInView) return;
+    const duration = 2000;
+    const start = performance.now();
+
+    function tick(now: number) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setDisplay(Math.round(eased * target));
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
+  }, [isInView, target]);
+
+  return (
+    <span ref={ref} className={`text-5xl font-black ${className} mb-3`}>
+      {isInView ? display : 0}{suffix}
+    </span>
+  );
+}
 
 export default function AboutSection() {
   return (
@@ -46,9 +81,7 @@ export default function AboutSection() {
                 stat.offsetTop ? "mt-12" : ""
               } ${stat.offsetBottom ? "-mt-12" : ""}`}
             >
-              <span className={`text-5xl font-black ${stat.color} mb-3`}>
-                {stat.value}
-              </span>
+              <AnimatedCounter value={stat.value} className={stat.color} />
               <span className="text-xs uppercase tracking-[0.2em] text-text-secondary font-bold">
                 {stat.label}
               </span>
