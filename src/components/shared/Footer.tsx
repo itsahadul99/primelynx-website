@@ -1,7 +1,7 @@
 "use client";
 
 import { MaterialIcon } from "@/components/ui";
-import { siteConfig, footerLinks } from "@/lib/constants";
+import { footerLinks, siteConfig } from "@/lib/constants";
 
 export default function Footer() {
   return (
@@ -10,7 +10,7 @@ export default function Footer() {
         {/* Brand */}
         <div className="space-y-8">
           <div className="flex items-center gap-2">
-            <MaterialIcon icon="hexagon" className="text-primary text-2xl" filled />
+            <img src="/logo.png" alt="Logo" className="w-12 h-12" />
             <span className="text-xl font-black tracking-tighter text-text-primary">
               {siteConfig.name}
             </span>

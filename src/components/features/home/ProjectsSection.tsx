@@ -130,7 +130,7 @@ export default function ProjectsSection() {
       </div>
 
       {/* Bottom CTA */}
-      <motion.div
+      {/* <motion.div
         className="mt-16 text-center"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -147,7 +147,7 @@ export default function ProjectsSection() {
             className="text-base text-primary group-hover:translate-x-1 transition-transform duration-300"
           />
         </a>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 }

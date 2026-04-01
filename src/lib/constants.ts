@@ -77,30 +77,75 @@ export const services = [
 
 export const projects = [
   {
-    title: "Aeris Dashboard",
-    description: "Real-time cloud infrastructure monitoring platform for enterprise-scale logistics.",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBhjJOZluIGhYqq0f-vroDyrng1Oszt8GObOAJJw3l5pYyGGcQBQLNYMgyogbvE6o-75F3lGQTql5eAJQfDMODsq-53QVLeiOR_tCuHlt3Eo55qTTHzmetJHoHauiTxxwne0KRdp58Vtg99kGpNI2RimGNsGzLO9eqR8SBWkg2XYujP5uJXgBZbVPf6-qrbgMyacHUuWNiCoSJdrzlEgAPM33Z0ARpggMMp4I9EuZ1CdyjBIjEoYgMLXd8jluQsri74ePq6GZ0kE40",
+    title: "CWA - Organization Management",
+    description: "A complete organization management system for handling members, roles, and internal operations efficiently.",
+    image: "/projects/cwa.png",
     tags: [
       { label: "Next.js", color: "primary" },
-      { label: "TypeScript", color: "secondary" },
+      { label: "MongoDB", color: "secondary" },
     ],
   },
   {
-    title: "Flux Wallet",
-    description: "A secure, high-performance crypto wallet focusing on seamless user experience.",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCyb8yOsOqfXxA86qidQlYJoBG2Btjht2eWd0iQPpmZjYP3XoW3nLWWPQNaLAKJhLrRFitwOXl3SSDNwbSD24itAX0F_c1mV8kDBxnVMwe0dZ1-8sxQ41bPiy7mEdRLdJ9nQJkqED2xjPeFN6e9vfYR0qQ7ps5AoornZ5ks_oZ8KmFaD84GevWJX2Sr9h00htIYRzbV1iufL-CneSsQUI7a6yYHBT29DUrgMDcbBMfwEbUMQXgh5VEAcDQ3PF2ExUuxZHt4qfG3tMo",
+    title: "Qurbani Market",
+    description: "A full-featured e-commerce platform for buying and selling Qurbani animals with filtering, booking, and payment features.",
+    image: "/projects/qurbani-market.png",
+    tags: [
+      { label: "React", color: "primary" },
+      { label: "Stripe", color: "secondary" },
+    ],
+  },
+  {
+    title: "Happy Restaurant",
+    description: "Restaurant management system with order tracking, billing, and admin dashboard for smooth operations.",
+    image: "/projects/happy-restaurant.png",
     tags: [
       { label: "React Native", color: "indigo" },
       { label: "Node.js", color: "secondary" },
     ],
   },
   {
-    title: "Nexus Core",
-    description: "Backend infrastructure overhaul for a global media conglomerate.",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAkyXQw9sWS8A4WGkaBAsR6oA69UJe2V6Wza1WmuWbkxzFl2W0peeC0V3Bxmv_ngMHFnMt5YHtMpQMiANCA6V9OPNnn8aGayo9CIdnwzj41gqBVvIrRbwWc1bFTRwoJDbst8kd6DCDyHnSFn8JnrlVQ9l_Fc9HdxRhY-_jkhEE-o6EWRpzK0YFOHOvbQPhCug_I4bZOaT6fFb3Vogm0wDRTmpk0tGpzdxhCqdsiuTwqp8UnwShO1pUp2VjOLBXNVDCrINQFBXS16ro",
+    title: "My Inventory",
+    description: "Inventory management system to track stock, manage products, and monitor business operations in real time.",
+    image: "/projects/inventory.png",
     tags: [
-      { label: "AWS", color: "primary" },
-      { label: "Docker", color: "secondary" },
+      { label: "MERN", color: "primary" },
+      { label: "MongoDB", color: "secondary" },
+    ],
+  },
+  {
+    title: "Todo Daily",
+    description: "Simple and efficient daily task management app with clean UI and task tracking features.",
+    image: "/projects/todo.png",
+    tags: [
+      { label: "React", color: "primary" },
+      { label: "Tailwind", color: "secondary" },
+    ],
+  },
+  {
+    title: "Bulk SMS Sender",
+    description: "Tool for sending bulk SMS campaigns with contact management and delivery tracking system.",
+    image: "/projects/sms.png",
+    tags: [
+      { label: "Node.js", color: "primary" },
+      { label: "API", color: "secondary" },
+    ],
+  },
+  {
+    title: "Personal Manager",
+    description: "Personal productivity app to manage tasks, notes, and daily activities in one place.",
+    image: "/projects/personal-manager.png",
+    tags: [
+      { label: "Next.js", color: "primary" },
+      { label: "TypeScript", color: "secondary" },
+    ],
+  },
+  {
+    title: "Streamit",
+    description: "Video streaming platform with content browsing, playback system, and modern UI experience.",
+    image: "/projects/streamit.png",
+    tags: [
+      { label: "React", color: "primary" },
+      { label: "Firebase", color: "secondary" },
     ],
   },
 ];

@@ -45,7 +45,7 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-white/5">
       <div className="flex justify-between items-center px-8 py-5 max-w-7xl mx-auto">
         <a href="/" className="flex items-center gap-2">
-          <MaterialIcon icon="hexagon" className="text-secondary" filled />
+        <img src="/logo.png" alt="Logo" className="w-12 h-12" />
           <span className="text-xl font-extrabold tracking-tighter text-text-primary">
             {siteConfig.name}
           </span>
