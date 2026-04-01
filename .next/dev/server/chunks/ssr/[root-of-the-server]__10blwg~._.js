@@ -251,13 +251,13 @@ const techCategories = [
         title: "Frontend",
         color: "primary",
         borderColor: "border-l-primary",
-        techs: "React, Next.js, TypeScript, Tailwind, Framer Motion"
+        techs: "Next.js, React, TypeScript, Tailwind, Shadcn, Ant Design"
     },
     {
         title: "Backend",
         color: "secondary",
         borderColor: "border-l-secondary",
-        techs: "Node.js, Python, Go, GraphQL, PostgreSQL, Redis"
+        techs: "Rust, Node.js, Express, Redis, PostgreSQL, SQL"
     },
     {
         title: "Cloud & DevOps",
@@ -336,7 +336,7 @@ const techMarqueeRow2 = [
         color: "text-text-primary"
     },
     {
-        name: "Go Lang",
+        name: "Rust",
         color: "text-text-primary"
     }
 ];

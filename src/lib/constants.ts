@@ -106,8 +106,8 @@ export const projects = [
 ];
 
 export const techCategories = [
-  { title: "Frontend", color: "primary", borderColor: "border-l-primary", techs: "React, Next.js, TypeScript, Tailwind, Framer Motion" },
-  { title: "Backend", color: "secondary", borderColor: "border-l-secondary", techs: "Node.js, Python, Go, GraphQL, PostgreSQL, Redis" },
+  { title: "Frontend", color: "primary", borderColor: "border-l-primary", techs: "Next.js, React, TypeScript, Tailwind, Shadcn, Ant Design" },
+  { title: "Backend", color: "secondary", borderColor: "border-l-secondary", techs: "Rust, Node.js, Express, Redis, PostgreSQL, SQL" },
   { title: "Cloud & DevOps", color: "indigo-400", borderColor: "border-l-indigo-500", techs: "AWS, Docker, Kubernetes, Terraform, CI/CD" },
   { title: "Design", color: "text-primary", borderColor: "border-l-text-primary", techs: "Figma, Adobe Suite, Prototyping, Design Systems" },
 ];
@@ -131,7 +131,7 @@ export const techMarqueeRow2 = [
   { name: "Tailwind CSS", color: "text-text-primary" },
   { name: "Terraform", color: "text-primary" },
   { name: "Framer Motion", color: "text-text-primary" },
-  { name: "Go Lang", color: "text-text-primary" },
+  { name: "Rust", color: "text-text-primary" },
 ];
 
 export const whyChooseUs = [

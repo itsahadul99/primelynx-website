@@ -92,7 +92,7 @@ export default function HeroSection() {
     <section
       id="hero"
       ref={sectionRef}
-      className="relative min-h-[calc(100vh-1rem)] flex flex-col justify-center items-center text-center px-6 pt-16 pb-8 bg-grid"
+      className="relative min-h-[calc(100vh-1rem)] flex flex-col justify-center items-center text-center px-6 pt-16 pb-8 bg-grid overflow-hidden md:overflow-visible"
     >
       {/* Animated gradient orbs that follow mouse */}
       <motion.div
