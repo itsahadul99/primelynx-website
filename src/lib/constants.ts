@@ -30,6 +30,108 @@ export const aboutStats = [
   { value: "10+", label: "Specialists", color: "text-primary" },
 ];
 
+export const teamMembers = [
+  {
+    name: "Ahadul Islam",
+    role: "Full-Stack Developer",
+    image: "/demo.jpg",
+    skills: ["Next.js", "React", "Node.js", "MongoDB"],
+    social: {
+      github: "https://github.com/itsahadul99",
+      linkedin: "#",
+      twitter: "#",
+    },
+  },
+  {
+    name: "Rakibul Hasan",
+    role: "Frontend Developer",
+    image: "/demo.jpg",
+    skills: ["React", "TypeScript", "Tailwind", "Figma"],
+    social: {
+      github: "#",
+      linkedin: "#",
+      twitter: "#",
+    },
+  },
+  {
+    name: "Sajid Rahman",
+    role: "Backend Engineer",
+    image: "/demo.jpg",
+    skills: ["Node.js", "PostgreSQL", "Redis", "AWS"],
+    social: {
+      github: "#",
+      linkedin: "#",
+      twitter: "#",
+    },
+  },
+  {
+    name: "Tanvir Ahmed",
+    role: "UI/UX Designer",
+    image: "/demo.jpg",
+    skills: ["Figma", "Adobe XD", "Prototyping", "Design Systems"],
+    social: {
+      github: "#",
+      linkedin: "#",
+      twitter: "#",
+    },
+  },
+  {
+    name: "Fahim Chowdhury",
+    role: "DevOps Engineer",
+    image: "/demo.jpg",
+    skills: ["Docker", "AWS", "Kubernetes", "CI/CD"],
+    social: {
+      github: "#",
+      linkedin: "#",
+      twitter: "#",
+    },
+  },
+  {
+    name: "Nusrat Jahan",
+    role: "Mobile Developer",
+    image: "/demo.jpg",
+    skills: ["React Native", "Flutter", "Firebase", "TypeScript"],
+    social: {
+      github: "#",
+      linkedin: "#",
+      twitter: "#",
+    },
+  },
+  {
+    name: "Maruf Karim",
+    role: "Full-Stack Developer",
+    image: "/demo.jpg",
+    skills: ["Next.js", "Node.js", "PostgreSQL", "Redis"],
+    social: {
+      github: "#",
+      linkedin: "#",
+      twitter: "#"
+    },
+  },
+  {
+    name: "Tasnia Akter",
+    role: "Frontend Developer",
+    image: "/demo.jpg",
+    skills: ["React", "Vue.js", "Tailwind", "TypeScript"],
+    social: {
+      github: "#",
+      linkedin: "#",
+      twitter: "#",
+    },
+  },
+  {
+    name: "Raihan Uddin",
+    role: "QA Engineer",
+    image: "/demo.jpg",
+    skills: ["Cypress", "Jest", "Selenium", "Playwright"],
+    social: {
+      github: "#",
+      linkedin: "#",
+      twitter: "#",
+    },
+  },
+];
+
 export const services = [
   {
     icon: "code",

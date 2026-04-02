@@ -110,3 +110,29 @@ h1, h2, h3, h4, h5, h6 {
 .project-card:hover .project-overlay {
   opacity: 1;
 }
+
+/* Team slider custom dots */
+.team-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.2);
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.team-dot:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.team-dot-active {
+  width: 32px;
+  background: #3B82F6;
+}
+
+/* Hide default swiper nav arrows (using custom buttons) */
+.team-slider .swiper-button-next,
+.team-slider .swiper-button-prev {
+  display: none;
+}

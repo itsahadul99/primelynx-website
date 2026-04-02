@@ -2,7 +2,6 @@ import { Navbar, Footer, BackgroundOrbs } from "@/components/shared";
 import {
   HeroSection,
   AboutSection,
-  MissionVisionSection,
   ServicesSection,
   ProjectsSection,
   TechStackSection,
@@ -20,7 +19,6 @@ export default function Home() {
         <HeroSection />
         <ServicesSection />
         <AboutSection />
-        <MissionVisionSection />
         <ProjectsSection />
         <TechStackSection />
         <WhyChooseUsSection />

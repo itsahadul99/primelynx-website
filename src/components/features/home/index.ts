@@ -1,6 +1,5 @@
 export { default as HeroSection } from "./HeroSection";
 export { default as AboutSection } from "./AboutSection";
-export { default as MissionVisionSection } from "./MissionVisionSection";
 export { default as ServicesSection } from "./ServicesSection";
 export { default as ProjectsSection } from "./ProjectsSection";
 export { default as TechStackSection } from "./TechStackSection";
