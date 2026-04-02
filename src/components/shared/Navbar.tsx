@@ -45,7 +45,7 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-white/5">
       <div className="flex justify-between items-center px-8 py-5 max-w-7xl mx-auto">
         <a href="/" className="flex items-center gap-2">
-        <img src="/logo.png" alt="Logo" className="w-12 h-12" />
+          <img src="/logo.png" alt="Logo" className="w-12 h-12" />
           <span className="text-xl font-extrabold tracking-tighter text-text-primary">
             {siteConfig.name}
           </span>
@@ -58,22 +58,21 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               onClick={(e) => handleClick(e, link.href)}
-              className={`transition-colors ${
-                activeSection === link.href
+              className={`transition-colors ${activeSection === link.href
                   ? "text-secondary font-semibold hover:text-secondary/80"
                   : "text-text-secondary hover:text-text-primary"
-              }`}
+                }`}
             >
               {link.label}
             </a>
           ))}
         </div>
 
-        <button className="hidden md:block bg-primary text-white px-7 py-2.5 rounded-full font-bold hover:bg-primary/90 transition-all active:scale-95">
-         <a href="#contact">
-           Get Started
-         </a>
-        </button>
+        <a href="#contact">
+          <button className="hidden md:block bg-primary text-white px-7 py-2.5 cursor-pointer rounded-full font-bold hover:bg-primary/90 transition-all active:scale-95">
+            Get Started
+          </button>
+        </a>
 
         {/* Mobile menu button */}
         <button
@@ -100,9 +99,8 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   onClick={(e) => handleClick(e, link.href)}
-                  className={`text-lg ${
-                    activeSection === link.href ? "text-secondary font-semibold" : "text-text-secondary"
-                  }`}
+                  className={`text-lg ${activeSection === link.href ? "text-secondary font-semibold" : "text-text-secondary"
+                    }`}
                 >
                   {link.label}
                 </a>

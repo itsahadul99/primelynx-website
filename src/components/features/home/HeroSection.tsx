@@ -209,9 +209,11 @@ export default function HeroSection() {
                 },
               }}
             >
-              <Button className="py-1 h-12 flex justify-center items-center" variant={btn.variant}>
-                <a href={btn.href}>{btn.label}</a>
-              </Button>
+              <a href={btn.href} className="cursor-pointer">
+                <Button className="py-1 h-12 flex justify-center items-center" variant={btn.variant}>
+                  {btn.label}
+                </Button>
+              </a>
             </motion.div>
           ))}
         </motion.div>
@@ -245,7 +247,7 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-    
+
     </section>
   );
 }

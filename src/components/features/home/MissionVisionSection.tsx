@@ -26,7 +26,7 @@ const cards = [
 
 export default function MissionVisionSection() {
   return (
-    <section className="py-20 px-8 max-w-7xl mx-auto">
+    <section className="py-20 pt-0 px-8 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {cards.map((card, i) => (
           <motion.div

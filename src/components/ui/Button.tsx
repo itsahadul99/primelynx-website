@@ -27,7 +27,7 @@ export default function Button({
 }: ButtonProps) {
   return (
     <button
-      className={`px-12 py-5 rounded-2xl font-extrabold text-lg transition-all active:scale-95 ${variants[variant]} ${className}`}
+      className={`px-12 py-5 cursor-pointer rounded-2xl font-extrabold text-lg transition-all active:scale-95 ${variants[variant]} ${className}`}
       {...props}
     >
       {children}
