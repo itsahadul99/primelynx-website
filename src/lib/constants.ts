@@ -4,17 +4,18 @@ export const siteConfig = {
   description:
     "We design and engineer high-performance digital ecosystems that empower brands to redefine their market presence.",
   url: "https://primelynx.tech",
-  email: "hello@primelynx.tech",
-  phone: "+1 (555) 000-LYNX",
-  address: "101 Design Way, San Francisco, CA 94103",
+  email: "primelynx.bd@gmail.com",
+  phone: "(718)869-0880",
+  address: "US Address: 421 Grant Ave, Brooklyn, NY 11208",
+  bdAddress: "BD Address: 149/A, Airport Road, Baitush Saraf-Complex (4th Floor), Farmgate, Tejgaon, Dhaka."
 };
 
 export const navLinks = [
   { label: "Home", href: "#hero" },
   { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
   { label: "Work", href: "#work" },
   { label: "Contact", href: "#contact" },
+  { label: "About Us", href: "/about-us" },
 ];
 
 export const heroStats = [

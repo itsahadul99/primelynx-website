@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/constants";
+import Navbar from "@/components/shared/Navbar";
+import BackgroundOrbs from "@/components/shared/BackgroundOrbs";
+import Footer from "@/components/shared/Footer";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-headline",
@@ -56,7 +59,16 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen antialiased">{children}</body>
+      <body className="min-h-screen antialiased">
+        <>
+          <BackgroundOrbs />
+          <Navbar />
+          <main>
+            {children}
+          </main>
+          <Footer />
+        </>
+      </body>
     </html>
   );
 }

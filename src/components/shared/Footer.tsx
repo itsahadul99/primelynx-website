@@ -54,6 +54,10 @@ export default function Footer() {
               <MaterialIcon icon="location_on" className="text-primary text-lg" />
               <span dangerouslySetInnerHTML={{ __html: siteConfig.address.replace(", ", ",<br/>") }} />
             </li>
+            <li className="flex items-start gap-4 leading-relaxed">
+              <MaterialIcon icon="location_on" className="text-primary text-lg" />
+              <span dangerouslySetInnerHTML={{ __html: siteConfig.bdAddress.replace(", ", ",<br/>") }} />
+            </li>
           </ul>
         </div>
 
