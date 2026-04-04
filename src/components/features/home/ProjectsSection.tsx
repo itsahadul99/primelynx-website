@@ -1,9 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { SectionHeading, MaterialIcon } from "@/components/ui";
 import { projects } from "@/lib/constants";
+import CaseStudyModal from "./CaseStudyModal";
+
+type Project = (typeof projects)[number];
 
 const tagColors: Record<string, { bg: string; text: string }> = {
   primary: { bg: "bg-primary/20", text: "text-primary" },
@@ -15,10 +19,12 @@ function ProjectCard({
   project,
   index,
   featured = false,
+  onViewCaseStudy,
 }: {
-  project: (typeof projects)[number];
+  project: Project;
   index: number;
   featured?: boolean;
+  onViewCaseStudy: (project: Project) => void;
 }) {
   return (
     <motion.div
@@ -91,9 +97,9 @@ function ProjectCard({
         </p>
 
         {/* CTA */}
-        <a
-          href="#"
-          className="inline-flex items-center gap-3 text-primary font-bold text-sm group/link w-fit"
+        <button
+          onClick={() => onViewCaseStudy(project)}
+          className="inline-flex items-center gap-3 text-primary font-bold text-sm group/link w-fit cursor-pointer"
         >
           <span className="relative">
             View Case Study
@@ -102,7 +108,7 @@ function ProjectCard({
           <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 border border-primary/20 group-hover/link:bg-primary/20 group-hover/link:translate-x-1 transition-all duration-300">
             <MaterialIcon icon="arrow_forward" className="text-sm" />
           </span>
-        </a>
+        </button>
       </div>
     </motion.div>
   );
@@ -110,6 +116,7 @@ function ProjectCard({
 
 export default function ProjectsSection() {
   const [featured, ...rest] = projects;
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
     <section id="work" className="py-40 px-6 md:px-8 max-w-350 mx-auto">
@@ -120,34 +127,30 @@ export default function ProjectsSection() {
       />
 
       {/* Featured project — full width */}
-      <ProjectCard project={featured} index={0} featured />
+      <ProjectCard
+        project={featured}
+        index={0}
+        featured
+        onViewCaseStudy={setSelectedProject}
+      />
 
       {/* Remaining projects — 2-column grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
         {rest.map((project, i) => (
-          <ProjectCard key={project.title} project={project} index={i + 1} />
+          <ProjectCard
+            key={project.title}
+            project={project}
+            index={i + 1}
+            onViewCaseStudy={setSelectedProject}
+          />
         ))}
       </div>
 
-      {/* Bottom CTA */}
-      {/* <motion.div
-        className="mt-16 text-center"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-      >
-        <a
-          href="#"
-          className="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-white/10 text-text-primary font-bold text-sm hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 group"
-        >
-          View All Projects
-          <MaterialIcon
-            icon="arrow_forward"
-            className="text-base text-primary group-hover:translate-x-1 transition-transform duration-300"
-          />
-        </a>
-      </motion.div> */}
+      {/* Case Study Modal */}
+      <CaseStudyModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
     </section>
   );
 }
