@@ -105,7 +105,7 @@ export default function Navbar() {
           })}
         </div>
 
-        <a href="#contact">
+        <a href={isHome ? "#contact" : "/#contact"} onClick={(e) => handleClick(e, "#contact")}>
           <button className="hidden md:block bg-primary text-white px-7 py-2.5 cursor-pointer rounded-full font-bold hover:bg-primary/90 transition-all active:scale-95">
             Get Started
           </button>
@@ -155,9 +155,11 @@ export default function Navbar() {
                   </Link>
                 );
               })}
-              <button className="bg-primary text-white px-7 py-2.5 rounded-full font-bold mt-2 active:scale-95">
-                Get Started
-              </button>
+              <a href={isHome ? "#contact" : "/#contact"} onClick={(e) => handleClick(e, "#contact")}>
+                <button className="bg-primary text-white px-7 py-2.5 rounded-full font-bold mt-2 active:scale-95">
+                  Get Started
+                </button>
+              </a>
             </div>
           </motion.div>
         )}
