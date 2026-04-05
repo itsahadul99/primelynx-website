@@ -128,7 +128,7 @@ function TeamSlider() {
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-            //   viewport={{ once: true, margin: "-60px" }}
+              //   viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.06 }}
               className="h-full pb-2"
             >
@@ -137,15 +137,16 @@ function TeamSlider() {
 
                 <div className="relative rounded-3xl bg-surface overflow-hidden h-full min-h-[420px] flex flex-col">
                   {/* Photo */}
-                  <div className="relative w-full h-70 sm:h-75 lg:h-60 overflow-hidden">
+                  <div className="relative w-full h-70 sm:h-75 lg:h-60 overflow-hidden rounded-2xl">
                     <Image
                       src={member.image}
                       alt={member.name}
                       fill
-                      loading="lazy"
-                      className="object-center transition-all duration-700 group-hover:scale-105 group-hover:brightness-75"
+                      sizes="200"
+                      loading="eager"
+                      className="object-cover object-top transition-all duration-700 group-hover:scale-105 group-hover:brightness-75"
                     />
-                    <div className="absolute inset-0 bg-linear-to-t from-surface via-surface/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/10 to-transparent" />
                   </div>
 
                   {/* Info */}
@@ -227,9 +228,8 @@ export default function AboutUs() {
           {aboutStats.map((stat) => (
             <GlassCard
               key={stat.label}
-              className={`p-10 flex flex-col justify-center items-center text-center ${
-                stat.offsetTop ? "mt-12" : ""
-              } ${stat.offsetBottom ? "-mt-12" : ""}`}
+              className={`p-10 flex flex-col justify-center items-center text-center ${stat.offsetTop ? "mt-12" : ""
+                } ${stat.offsetBottom ? "-mt-12" : ""}`}
             >
               <AnimatedCounter value={stat.value} className={stat.color} />
               <span className="text-xs uppercase tracking-[0.2em] text-text-secondary font-bold">
