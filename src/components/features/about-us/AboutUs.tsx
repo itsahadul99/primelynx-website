@@ -146,26 +146,6 @@ function TeamSlider() {
                       className="object-center transition-all duration-700 group-hover:scale-105 group-hover:brightness-75"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-surface via-surface/40 to-transparent" />
-
-                    {/* Social links — float up on hover */}
-                    <div className="absolute inset-x-0 bottom-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 z-20">
-                      <div className="flex justify-center gap-3">
-                        {Object.entries(member.social).map(([platform, url]) => (
-                          <a
-                            key={platform}
-                            href={url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-10 h-10 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-primary hover:border-primary hover:scale-110 transition-all duration-300"
-                          >
-                            <MaterialIcon
-                              icon={socialIcons[platform] || "link"}
-                              className="text-white text-lg"
-                            />
-                          </a>
-                        ))}
-                      </div>
-                    </div>
                   </div>
 
                   {/* Info */}

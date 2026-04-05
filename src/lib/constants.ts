@@ -38,33 +38,21 @@ export const teamMembers = [
     role: "Founder & CEO",
     image: "/team/ceo.jpeg",
     skills: ["Business Strategy", "Product Vision", "Client Relations", "Team Leadership"],
-    social: {
-      github: "#",
-      linkedin: "#",
-      twitter: "#",
-    },
+
   },
   {
     name: "Shahadat Hossain",
     role: "Project Manager",
     image: "/team/shahadat_pm.jpeg",
     skills: ["Agile Methodologies", "Scrum Mastery", "Stakeholder Communication", "Risk Management"],
-    social: {
-      github: "#",
-      linkedin: "#",
-      twitter: "#",
-    },
+
   },
   {
     name: "Inthisar Ul Islam",
     role: "Backend Developer",
     image: "/team/inthishar_backend.jpeg",
     skills: ["Rust", "Axum", "Dart", "PostgreSQL", "SQLite"],
-    social: {
-      github: "#",
-      linkedin: "#",
-      twitter: "#",
-    },
+  
   },
 
   {
@@ -72,33 +60,20 @@ export const teamMembers = [
     role: "Dev Ops Engineer",
     image: "/team/naushad_devops.jpeg",
     skills: ["Docker", "Kubernetes", "CI/CD", "AWS"],
-    social: {
-      github: "#",
-      linkedin: "#",
-      twitter: "#",
-    },
+
   },
   {
     name: "Ahsan Ullah Mubin",
     role: "Backend Developer",
     image: "/team/ahsan_backend.jpeg",
     skills: ["Node.js", "Express", "PHP", "PostgreSQL", "SQLite"],
-    social: {
-      github: "#",
-      linkedin: "#",
-      twitter: "#",
-    },
+    
   },
   {
     name: "Ahadul Islam",
     role: "Front End Developer",
     image: "/team/ahadul_frontend.jpeg",
     skills: ["Next.js", "React", "TypeScript", "Tailwind", "Shadcn", "Ant Design", "Figma"],
-    social: {
-      github: "https://github.com/itsahadul99",
-      linkedin: "https://www.linkedin.com/in/itisahadul/",
-      twitter: "#",
-    },
   },
 ];
 
