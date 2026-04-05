@@ -44,11 +44,11 @@ export const teamMembers = [
     image: "/team/shahadat_pm.jpeg",
     skills: ["Quality Assurance", "Scrum Mastery", "Stakeholder Communication", "Risk Management", "Agile Methodology"],
   },
-  {
+{
     name: "Intishar-Ul Islam",
-    role: "Full Stack Lead Developer",
+    role: "Full Stack Lead Engineer",
     image: "/team/inthishar_backend.jpeg",
-    skills: ["Principal Architect", "Data Engineering", "Rust", "Axum", "Dart", "PostgreSQL", "SQLite"],
+    skills: ["Principal Architect", "Data Engineering", "Rust", "Flutter", "Dart", "JavaScript", "C/C++", "PostgreSQL", "SQLite", "Clickhouse",],
   },
   {
     name: "Ahsan Ullah Mubin",

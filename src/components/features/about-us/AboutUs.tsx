@@ -135,7 +135,7 @@ function TeamSlider() {
               <div className="relative group rounded-3xl p-px bg-linear-to-b from-white/10 to-transparent hover:from-primary/40 hover:to-secondary/20 transition-all duration-500 h-full">
                 <div className="absolute -inset-1 bg-linear-to-b from-primary/0 to-secondary/0 group-hover:from-primary/10 group-hover:to-secondary/5 rounded-3xl blur-xl transition-all duration-500" />
 
-                <div className="relative rounded-3xl bg-surface overflow-hidden h-full min-h-[420px] flex flex-col">
+                <div className="relative rounded-3xl bg-surface overflow-hidden h-full min-h-[430px] flex flex-col">
                   {/* Photo */}
                   <div className="relative w-full h-70 sm:h-75 lg:h-60 overflow-hidden rounded-2xl">
                     <Image
