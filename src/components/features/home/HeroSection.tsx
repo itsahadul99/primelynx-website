@@ -11,7 +11,6 @@ function AnimatedCounter({ value, label }: { value: string; label: string }) {
   const count = useMotionValue(0);
   const rounded = useTransform(count, (v) => `${Math.round(v)}${suffix}`);
   const [display, setDisplay] = useState(`0${suffix}`);
-
   useEffect(() => {
     const unsub = rounded.on("change", setDisplay);
     const ctrl = animate(count, num, { duration: 2, delay: 1.2, ease: "easeOut" });

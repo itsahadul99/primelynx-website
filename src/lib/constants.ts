@@ -19,22 +19,22 @@ export const navLinks = [
 ];
 
 export const heroStats = [
-  { value: "50+", label: "Projects Delivered" },
-  { value: "12+", label: "Global Clients" },
+  { value: "10+", label: "Projects Delivered" },
+  { value: "5", label: "Global Clients" },
   { value: "99%", label: "Success Rate" },
 ];
 
 export const aboutStats = [
-  { value: "50+", label: "Projects", color: "text-primary" },
-  { value: "5+", label: "Years Exp.", color: "text-secondary", offsetTop: true },
-  { value: "20+", label: "Awards", color: "text-indigo-400", offsetBottom: true },
+  { value: "10+", label: "Projects", color: "text-primary" },
+  { value: "2+", label: "Years Exp.", color: "text-secondary", offsetTop: true },
+  { value: "2+", label: "Awards", color: "text-indigo-400", offsetBottom: true },
   { value: "10+", label: "Specialists", color: "text-primary" },
 ];
 
 export const teamMembers = [
 
   {
-    name: "Sarwar Hossain",
+    name: "Mohammad Sarwar",
     role: "Founder & CEO",
     image: "/team/ceo.jpeg",
     skills: ["Business Strategy", "Product Vision", "Client Relations", "Team Leadership"],
@@ -45,29 +45,19 @@ export const teamMembers = [
     role: "Project Manager",
     image: "/team/shahadat_pm.jpeg",
     skills: ["Agile Methodologies", "Scrum Mastery", "Stakeholder Communication", "Risk Management"],
-
   },
   {
-    name: "Inthisar Ul Islam",
+    name: "Intishar-Ul Islam",
     role: "Lead Backend Developer",
     image: "/team/inthishar_backend.jpeg",
     skills: ["Rust", "Axum", "Dart", "PostgreSQL", "SQLite"],
-  
-  },
-
-  {
-    name: "Naushad Hasan",
-    role: "Dev Ops Engineer",
-    image: "/team/naushad_devops.jpeg",
-    skills: ["Docker", "Kubernetes", "CI/CD", "AWS"],
-
   },
   {
     name: "Ahsan Ullah Mubin",
     role: "Backend Developer",
     image: "/team/ahsan_backend.jpeg",
     skills: ["Node.js", "Express", "PHP", "PostgreSQL", "SQLite"],
-    
+
   },
   {
     name: "Ahadul Islam",
@@ -76,16 +66,34 @@ export const teamMembers = [
     skills: ["Next.js", "React", "TypeScript", "Tailwind", "Shadcn", "Ant Design", "Figma"],
   },
   {
+    name: "Naushad Hasan",
+    role: "Dev Ops Engineer",
+    image: "/team/naushad_devops.jpeg",
+    skills: ["Docker", "Kubernetes", "CI/CD", "AWS", "Azure", "GCP", "Terraform"],
+  },
+  {
     name: "Sabik Alam Rahat",
-    role: "Front End Developer",
+    role: "Senior Mobile Application Developer",
     image: "/team/rahat_mobile_application.jpeg",
-    skills: ["Next.js", "React", "TypeScript", "Tailwind", "Shadcn", "Ant Design", "Figma"],
+    skills: ["Flutter", "Dart", "Android/iOS", "Riverpod", "GetX", "Hive"],
   },
   {
     name: "Remon Ahammad",
-    role: "Back End Developer",
-    image: "/team/rimon_backend.jpeg",
-    skills: ["Next.js", "React", "TypeScript", "Tailwind", "Shadcn", "Ant Design", "Figma"],
+    role: "Backend Engineer",
+    image: "/team/backend_remon.jpeg",
+    skills: ["Flutter", "Rust", "Dart", "Android/iOS",],
+  },
+  {
+    name: "Al Shahariar Kabir Tuhin",
+    role: "SQA Engineer",
+    image: "/team/sqa_shahariar.jpeg",
+    skills: ["Manual Testing", "Automated Testing", "Test Planning", "Bug Tracking"],
+  },
+  {
+    name: "Ferdous Zaman",
+    role: "UX/UI Designer",
+    image: "/team/ui_ferdous.jpeg",
+    skills: ["Figma", "Adobe XD", "User Research", "Wireframing", "Prototyping"],
   },
 ];
 
@@ -296,7 +304,7 @@ export const projects = [
     },
   },
   {
-    title: "SMS All Contact - Bulk SMS Sender",
+    title: "Bulk SMS Sender",
     description: "A Flutter mobile app for sending bulk SMS to multiple contacts at once with real-time progress, auto-retry, and all data kept strictly on-device.",
     image: "/demo.jpg",
     tags: [
@@ -444,9 +452,9 @@ export const testimonials = [
   },
   {
     quote: "Their engineering standards are incredibly high. The cloud infrastructure handles massive scale effortlessly.",
-    name: "Marcus Thorne",
-    role: "VP Engineering, Aeris",
-    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuCryYVDEGxVnV-veaydegN6bgPMfjfcBlfKXICLGJ_m7XWqdbE_F1zLHd2MeS7rnRd2gcBa52ilQZABJaX_QnMnJ-gcylx-4cG_wDfbTdySPwxe1RL7sUi5s48lNnIEeDTDB8X0duGg6Xu3KAWmil7ehooT4R4xSCYMxVWfua_w1hGZKXwhS3zEmFLo0J8-TzGN7jNz9wDoEoFZDjLgkhnTxfd5nD1f5AeqWpjSQDpwDaIO7H8FswZxin0dm3YTaLXO-vc3j8pi1dA",
+    name: "Syed Redwanul Islam",
+    role: "Managing Director, Tuan Group",
+    avatar: "team/tuan_group_md.jpeg",
   },
 ];
 

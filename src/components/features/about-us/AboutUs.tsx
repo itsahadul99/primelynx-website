@@ -142,6 +142,7 @@ function TeamSlider() {
                       src={member.image}
                       alt={member.name}
                       fill
+                      loading="lazy"
                       className="object-center transition-all duration-700 group-hover:scale-105 group-hover:brightness-75"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-surface via-surface/40 to-transparent" />

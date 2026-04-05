@@ -13,19 +13,14 @@ import {
 export default function Home() {
   return (
     <>
-      <BackgroundOrbs />
-      <Navbar />
-      <main>
-        <HeroSection />
-        <ServicesSection />
-        {/* <AboutSection /> */}
-        <ProjectsSection />
-        <TechStackSection />
-        <WhyChooseUsSection />
-        <TestimonialsSection />
-        <ContactSection />
-      </main>
-      <Footer />
+      <HeroSection />
+      <ServicesSection />
+      {/* <AboutSection /> */}
+      <ProjectsSection />
+      <TechStackSection />
+      <WhyChooseUsSection />
+      <TestimonialsSection />
+      <ContactSection />
     </>
   );
 }
