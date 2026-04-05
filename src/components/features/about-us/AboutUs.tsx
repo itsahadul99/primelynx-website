@@ -251,7 +251,7 @@ export default function AboutUs() {
         >
           <div className="relative rounded-3xl overflow-hidden aspect-[4/3]">
             <Image
-              src="/team/team_work.png"
+              src="/team/vission.png"
               alt="Primelynx Team"
               fill
               className="object-cover"
@@ -319,7 +319,7 @@ export default function AboutUs() {
         >
           <div className="relative rounded-3xl overflow-hidden aspect-[4/3]">
             <Image
-              src="/team/team_work.png"
+              src="/team/mission.png"
               alt="Primelynx Team at Work"
               fill
               className="object-cover"

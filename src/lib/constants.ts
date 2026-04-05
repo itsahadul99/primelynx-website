@@ -56,7 +56,7 @@ export const teamMembers = [
     name: "Ahsan Ullah Mubin",
     role: "Backend Developer",
     image: "/team/ahsan_backend.jpeg",
-    skills: ["Node.js", "Express", "PHP", "PostgreSQL", "SQLite"],
+    skills: ["C", "C++", "Node.js", "Express", "PHP", "PostgreSQL", "SQLite", "Redis", "Prisma", "Problem Solving"],
 
   },
   {
