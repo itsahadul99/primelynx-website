@@ -121,7 +121,6 @@ function TeamSlider() {
           sticky: true,
         }}
         grabCursor
-        loop
         speed={600}
       >
         {teamMembers.map((member, i) => (
