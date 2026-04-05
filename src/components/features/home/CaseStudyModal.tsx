@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { MaterialIcon } from "@/components/ui";
 import { projects } from "@/lib/constants";
@@ -86,21 +85,63 @@ export default function CaseStudyModal({
             variants={modal}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Hero image */}
-            <div className="relative h-64 md:h-80">
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                className="object-cover"
-                sizes="(max-width: 896px) 100vw, 896px"
+            {/* Hero — code-window aesthetic */}
+            <div className="relative h-64 md:h-80 overflow-hidden bg-background">
+              {/* Grid background */}
+              <div
+                className="absolute inset-0 opacity-[0.08]"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)",
+                  backgroundSize: "48px 48px",
+                }}
               />
-              <div className="absolute inset-0 bg-linear-to-t from-surface via-surface/60 to-transparent" />
+              {/* Glows */}
+              <div className="absolute -top-32 -left-32 w-80 h-80 rounded-full blur-[120px] opacity-30 bg-primary" />
+              <div className="absolute -bottom-32 -right-32 w-80 h-80 rounded-full blur-[120px] opacity-20 bg-secondary" />
+
+              {/* Window chrome */}
+              <div className="relative z-10 flex items-center gap-2 px-5 py-3.5 border-b border-white/5 bg-background/40 backdrop-blur-sm">
+                <span className="w-2.5 h-2.5 rounded-full bg-red-500/60" />
+                <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
+                <span className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
+                <span className="ml-3 font-mono text-[11px] text-text-secondary/70 tracking-wide truncate">
+                  ~/primelynx/case-study
+                </span>
+              </div>
+
+              {/* Terminal-style content */}
+              <div className="relative z-10 px-6 md:px-12 py-6 font-mono text-xs md:text-sm leading-relaxed">
+                <div className="text-text-secondary/60">
+                  <span className="text-primary">$</span> cat project.json
+                </div>
+                <div className="mt-2 text-text-secondary/50">{`{`}</div>
+                <div className="pl-4 text-text-secondary/80">
+                  <span className="text-secondary">&quot;name&quot;</span>
+                  <span className="text-text-secondary/50">: </span>
+                  <span className="text-primary">&quot;{project.title}&quot;</span>
+                  <span className="text-text-secondary/50">,</span>
+                </div>
+                <div className="pl-4 text-text-secondary/80">
+                  <span className="text-secondary">&quot;tags&quot;</span>
+                  <span className="text-text-secondary/50">: [</span>
+                  {project.tags.map((tag, i) => (
+                    <span key={tag.label}>
+                      <span className="text-indigo-400">&quot;{tag.label}&quot;</span>
+                      {i < project.tags.length - 1 && <span className="text-text-secondary/50">, </span>}
+                    </span>
+                  ))}
+                  <span className="text-text-secondary/50">]</span>
+                </div>
+                <div className="text-text-secondary/50">{`}`}</div>
+              </div>
+
+              <div className="absolute inset-x-0 bottom-0 h-20 bg-linear-to-t from-surface to-transparent pointer-events-none" />
 
               {/* Close button */}
               <button
                 onClick={onClose}
-                className="absolute top-4 right-4 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-background/60 backdrop-blur-sm border border-white/10 text-text-secondary hover:text-text-primary hover:bg-background/80 transition-colors cursor-pointer"
+                className="absolute top-4 right-4 z-20 flex items-center justify-center w-10 h-10 rounded-full bg-background/60 backdrop-blur-sm border border-white/10 text-text-secondary hover:text-text-primary hover:bg-background/80 transition-colors cursor-pointer"
               >
                 <MaterialIcon icon="close" className="text-xl" />
               </button>

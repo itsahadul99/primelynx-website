@@ -49,7 +49,7 @@ export const teamMembers = [
   },
   {
     name: "Inthisar Ul Islam",
-    role: "Backend Developer",
+    role: "Lead Backend Developer",
     image: "/team/inthishar_backend.jpeg",
     skills: ["Rust", "Axum", "Dart", "PostgreSQL", "SQLite"],
   
@@ -73,6 +73,18 @@ export const teamMembers = [
     name: "Ahadul Islam",
     role: "Front End Developer",
     image: "/team/ahadul_frontend.jpeg",
+    skills: ["Next.js", "React", "TypeScript", "Tailwind", "Shadcn", "Ant Design", "Figma"],
+  },
+  {
+    name: "Sabik Alam Rahat",
+    role: "Front End Developer",
+    image: "/team/rahat_mobile_application.jpeg",
+    skills: ["Next.js", "React", "TypeScript", "Tailwind", "Shadcn", "Ant Design", "Figma"],
+  },
+  {
+    name: "Remon Ahammad",
+    role: "Back End Developer",
+    image: "/team/rimon_backend.jpeg",
     skills: ["Next.js", "React", "TypeScript", "Tailwind", "Shadcn", "Ant Design", "Figma"],
   },
 ];
@@ -422,7 +434,7 @@ export const testimonials = [
     quote: "PrimeLynx truly understood our mission and delivered a powerful, user-friendly application that transformed how we serve our community.",
     name: "Mohammad Siddique",
     role: "President, CWA Inc. [USA]",
-    avatar: "default.jpg",
+    avatar: "team/cwa_ceo.jpeg",
   },
   {
     quote: "We don’t win by outspending competitors—we win by outthinking them, out-caring them, and delivering solutions that actually solve real problems for real people.",
