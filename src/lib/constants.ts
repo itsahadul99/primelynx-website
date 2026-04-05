@@ -444,16 +444,16 @@ export const whyChooseUs = [
 
 export const testimonials = [
   {
-    quote: "Primelynx transformed our outdated platform into a powerhouse of productivity. Their attention to detail is unmatched.",
-    name: "David Chen",
-    role: "CTO, Flux Media",
-    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuB4h21ttTLgd7k6Uy7v3cuL1bsP67OcZQvwVcL2tmfswzIrrkjFDjAGvnT_iOa3ahtGjSGgFe2w0wjhaTiwEneIoJR6tExxlKdyxSqrR3G4pbRIc-VgQWhX1sHCdGKtxqPdxqLTe-dSRjaFYfkE-oipI99RGxqddSGdLhraDcoKikoU5QFCwOssLgi0NfK9lr5AEFQnvgQD375Gk9fbLHZqMGl0ExP0xJMpCscbfF9IUm9ThRKE6ykAjO5oZu3uDxRrsJEa8nOIqsI",
+    quote: "PrimeLynx truly understood our mission and delivered a powerful, user-friendly application that transformed how we serve our community.",
+    name: "Mohammad Siddique",
+    role: "President, CWA Inc. [USA]",
+    avatar: "default.jpg",
   },
   {
-    quote: "Working with them was a seamless experience. They understood our complex requirements from day one.",
-    name: "Sarah Jenkins",
-    role: "Product Lead, NeoSoft",
-    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuCSlSoS8Qo_mlwIsLF89ap_BpoO-KZ3tZIrsuicF3hP5WXlXlT-fuaXq-gXLnsOpnDMpstY9cDAZVDUMCcXpMr-t16aZDpHvVBu7XQXIb0yWn1CccDFjXqeRf-30L50ZcDGemUbOEVkz09a6PmI8Ca5tlGO5ijnxE396YOZcgeJ97cqXur1dQik7ghOC_Hfh3EWYPRJG8n_O7nvsgmtaI-Z7XlUqnMTJFKSf_D2xTx26g6WEvTT2l4uR-0CA5yqoOxZ5Zm6KCF-Js8",
+    quote: "We don’t win by outspending competitors—we win by outthinking them, out-caring them, and delivering solutions that actually solve real problems for real people.",
+    name: " Mohammad Sarwar",
+    role: "Founder & CEO, Primelynx",
+    avatar: "team/ceo.jpeg",
   },
   {
     quote: "Their engineering standards are incredibly high. The cloud infrastructure handles massive scale effortlessly.",

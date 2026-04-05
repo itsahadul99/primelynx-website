@@ -291,7 +291,7 @@ export default function AboutUs() {
         >
           <GlassCard className="p-10 relative overflow-hidden group">
             <div className="absolute top-0 left-0 w-full h-0.5 bg-linear-to-r from-secondary to-indigo-500" />
-            <div className="flex items-start gap-6">
+            <div className="flex flex-col md:flex-row items-start gap-6">
               <div className="shrink-0 w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center">
                 <MaterialIcon icon="satellite" className="text-secondary text-4xl" />
               </div>
@@ -316,7 +316,7 @@ export default function AboutUs() {
         >
           <GlassCard className="p-10 relative overflow-hidden group">
             <div className="absolute top-0 left-0 w-full h-0.5 bg-linear-to-r from-primary to-secondary" />
-            <div className="flex items-start gap-6">
+            <div className="flex flex-col md:flex-row items-start gap-6">
               <div className="shrink-0 w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center">
                 <MaterialIcon icon="target" className="text-primary text-4xl" />
               </div>

@@ -1,9 +1,8 @@
 "use client";
 
-import Image from "next/image";
-import { motion } from "framer-motion";
 import { GlassCard, MaterialIcon } from "@/components/ui";
 import { testimonials } from "@/lib/constants";
+import { motion } from "framer-motion";
 
 function StarRating() {
   return (
@@ -46,12 +45,12 @@ export default function TestimonialsSection() {
                   </p>
                 </div>
                 <div className="flex items-center gap-5">
-                  <Image
+                  <img
                     src={testimonial.avatar}
                     alt={testimonial.name}
                     width={56}
                     height={56}
-                    className="rounded-full border-2 border-primary/20"
+                    className="rounded-full border-2 max-h-[56px] object-cover border-primary/20"
                   />
                   <div>
                     <p className="font-black text-text-primary">{testimonial.name}</p>
