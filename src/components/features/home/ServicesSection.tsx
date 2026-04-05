@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { GlassCard, MaterialIcon, SectionHeading } from "@/components/ui";
 import { services } from "@/lib/constants";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 
 const accentColors = [
   { gradient: "from-primary to-blue-400", glow: "rgba(59, 130, 246, 0.3)", ring: "ring-primary/30", text: "text-primary" },
@@ -115,16 +115,12 @@ export default function ServicesSection() {
                       animate={{ width: isHovered ? 48 : 24 }}
                       transition={{ duration: 0.3 }}
                     />
-                    <motion.span
+                    {/* <motion.span
                       className={`text-sm font-medium ${accent.text} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                     >
                       Learn more
                     </motion.span>
-                    <motion.span
-                      className={`${accent.text} opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1`}
-                    >
-                      <MaterialIcon icon="arrow_forward" className="text-sm" />
-                    </motion.span>
+                    */}
                   </div>
                 </GlassCard>
               </motion.div>
