@@ -186,7 +186,7 @@ export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
-    <section id="work" className="py-40 px-6 md:px-8 max-w-350 mx-auto">
+    <section id="work" className="py-20 md:py-40 px-6 md:px-8 max-w-350 mx-auto">
       <SectionHeading
         title="Building digital excellence."
         subtitle="A curated selection of projects where bold design meets flawless engineering."

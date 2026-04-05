@@ -6,7 +6,7 @@ import { whyChooseUs } from "@/lib/constants";
 
 export default function WhyChooseUsSection() {
   return (
-    <section className="relative py-40 px-8 overflow-hidden">
+    <section className="relative py-20 md:py-40 px-8 overflow-hidden">
       {/* Background decorations */}
       <div className="orb w-125 h-125 bg-primary/8 -top-40 -left-40" />
       <div className="orb w-100 h-100 bg-secondary/8 -bottom-32 -right-32" />

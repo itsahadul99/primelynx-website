@@ -19,7 +19,7 @@ export default function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <motion.div
-      className={`${centered ? "text-center flex flex-col items-center" : ""} mb-24 ${className}`}
+      className={`${centered ? "text-center flex flex-col items-center" : ""} mb-16 md:mb-24 ${className}`}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -30,11 +30,13 @@ export default function SectionHeading({
           {badge}
         </span>
       )}
-      <h2 className="text-5xl md:text-6xl font-black tracking-tight mb-6 leading-[1.1]">
+      <h2 className="text-[38px] md:text-6xl font-black tracking-tight mb-4 md:mb-6 leading-[1.1]">
         {title}
       </h2>
       {subtitle && (
-        <p className="text-text-secondary text-xl max-w-2xl mx-auto">{subtitle}</p>
+        <p className="text-text-secondary text-base md:text-xl max-w-2xl mx-auto">
+          {subtitle}
+        </p>
       )}
     </motion.div>
   );

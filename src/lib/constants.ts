@@ -442,19 +442,19 @@ export const testimonials = [
     quote: "PrimeLynx truly understood our mission and delivered a powerful, user-friendly application that transformed how we serve our community.",
     name: "Mohammad Siddique",
     role: "President, CWA Inc. [USA]",
-    avatar: "team/cwa_ceo.jpeg",
+    avatar: "/team/cwa_ceo.jpeg",
   },
   {
     quote: "We don’t win by outspending competitors—we win by outthinking them, out-caring them, and delivering solutions that actually solve real problems for real people.",
     name: " Mohammad Sarwar",
     role: "Founder & CEO, Primelynx",
-    avatar: "team/ceo.jpeg",
+    avatar: "/team/ceo.jpeg",
   },
   {
     quote: "Their engineering standards are incredibly high. The cloud infrastructure handles massive scale effortlessly.",
     name: "Syed Redwanul Islam",
     role: "Managing Director, Tuan Group",
-    avatar: "team/tuan_group_md.jpeg",
+    avatar: "/team/tuan_group_md.jpeg",
   },
 ];
 

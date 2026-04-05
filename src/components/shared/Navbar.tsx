@@ -65,7 +65,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-white/5">
+    <nav className="fixed top-0 w-full z-50 bg-background/90 backdrop-blur-md border-b border-white/5">
       <div className="flex justify-between items-center px-8 py-5 max-w-7xl mx-auto">
         <a href="/" className="flex items-center gap-2">
           <img src="/logo.png" alt="Logo" className="w-12 h-12" />
@@ -75,7 +75,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-10">
+        <div className="hidden md:flex items-center gap-10 text-xs lg:text-base">
           {navLinks.map((link) => {
             const active = isActive(link.href);
             const className = `transition-colors ${

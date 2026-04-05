@@ -142,8 +142,8 @@ function TeamSlider() {
                       src={member.image}
                       alt={member.name}
                       fill
-                      sizes="200"
-                      loading="eager"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                      loading={i < 4 ? "eager" : "lazy"}
                       className="object-cover object-top transition-all duration-700 group-hover:scale-105 group-hover:brightness-75"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/10 to-transparent" />

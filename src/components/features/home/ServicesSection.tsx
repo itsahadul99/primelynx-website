@@ -18,7 +18,7 @@ export default function ServicesSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section id="services" className="relative py-40 px-8 overflow-hidden">
+    <section id="services" className="relative py-20 md:py-40 px-8 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-surface/30" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />

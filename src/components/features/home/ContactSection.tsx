@@ -5,7 +5,7 @@ import { socialLinks } from "@/lib/constants";
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-40 px-8 max-w-4xl mx-auto text-center">
+    <section id="contact" className="py-20 md:py-40 px-8 max-w-4xl mx-auto text-center">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

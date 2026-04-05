@@ -6,7 +6,7 @@ import { footerLinks, siteConfig } from "@/lib/constants";
 export default function Footer() {
   return (
     <footer className="bg-background pt-24 font-body text-sm w-full border-t border-white/5">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-16 px-8 pb-20 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 px-8 pb-20 max-w-7xl mx-auto">
         {/* Brand */}
         <div className="space-y-8">
           <div className="flex items-center gap-2">

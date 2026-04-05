@@ -1,5 +1,9 @@
 "use client";
 
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/swiper-bundle.css";
 import { GlassCard, MaterialIcon } from "@/components/ui";
 import { testimonials } from "@/lib/constants";
 import { motion } from "framer-motion";
@@ -16,10 +20,10 @@ function StarRating() {
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-40 px-8 bg-surface/50">
+    <section className="py-20 md:py-40 px-8 bg-surface/50">
       <div className="max-w-7xl mx-auto">
         <motion.h2
-          className="text-5xl font-black tracking-tight mb-24"
+          className="text-5xl font-black tracking-tight mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -28,41 +32,64 @@ export default function TestimonialsSection() {
           Voices of Success
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {testimonials.map((testimonial, i) => (
-            <motion.div
-              key={testimonial.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-            >
-              <GlassCard className="p-12 flex flex-col justify-between h-full">
-                <div>
-                  <StarRating />
-                  <p className="text-xl font-medium italic mb-12 leading-relaxed text-text-primary">
-                    &ldquo;{testimonial.quote}&rdquo;
-                  </p>
-                </div>
-                <div className="flex items-center gap-5">
-                  <img
-                    src={testimonial.avatar}
-                    alt={testimonial.name}
-                    width={56}
-                    height={56}
-                    className="rounded-full border-2 max-h-[56px] object-cover border-primary/20"
-                  />
+        <Swiper
+        
+          modules={[Autoplay, Pagination]}
+          spaceBetween={24}
+          slidesPerView={1}
+          loop
+          grabCursor
+          speed={600}
+          breakpoints={{
+            768: { slidesPerView: 2, spaceBetween: 28 },
+            1024: { slidesPerView: 3, spaceBetween: 40 },
+          }}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          pagination={{
+            el: ".testimonials-pagination",
+            clickable: true,
+            bulletClass: "team-dot",
+            bulletActiveClass: "team-dot-active",
+          }}
+          className="pb-2"
+        >
+          {testimonials.map((testimonial) => (
+            <SwiperSlide key={testimonial.name} className="h-auto!">
+              <div className="h-full py-2 ">
+                <GlassCard className="p-12 flex flex-col justify-between h-full">
                   <div>
-                    <p className="font-black text-text-primary">{testimonial.name}</p>
-                    <p className="text-xs text-text-secondary uppercase tracking-widest font-black">
-                      {testimonial.role}
+                    <StarRating />
+                    <p className="text-xl font-medium italic mb-12 leading-relaxed text-text-primary">
+                      &ldquo;{testimonial.quote}&rdquo;
                     </p>
                   </div>
-                </div>
-              </GlassCard>
-            </motion.div>
+                  <div className="flex items-center gap-5">
+                    <Image
+                      src={testimonial.avatar}
+                      alt={testimonial.name}
+                      width={56}
+                      height={56}
+                      loading="lazy"
+                      className="rounded-full border-2 max-h-[56px] object-cover border-primary/20"
+                    />
+                    <div>
+                      <p className="font-black text-text-primary">{testimonial.name}</p>
+                      <p className="text-xs text-text-secondary uppercase tracking-widest font-black">
+                        {testimonial.role}
+                      </p>
+                    </div>
+                  </div>
+                </GlassCard>
+              </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
+
+        <div className="testimonials-pagination flex justify-center gap-2 mt-10" />
       </div>
     </section>
   );

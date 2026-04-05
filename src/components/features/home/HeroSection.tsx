@@ -72,78 +72,98 @@ function AnimatedText({
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 });
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!sectionRef.current) return;
-      const rect = sectionRef.current.getBoundingClientRect();
-      setMousePos({
-        x: (e.clientX - rect.left) / rect.width,
-        y: (e.clientY - rect.top) / rect.height,
-      });
-    };
-    const el = sectionRef.current;
-    el?.addEventListener("mousemove", handleMouseMove);
-    return () => el?.removeEventListener("mousemove", handleMouseMove);
+    const mq = window.matchMedia("(min-width: 768px) and (pointer: fine)");
+    const update = () => setIsDesktop(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
   }, []);
+
+  useEffect(() => {
+    if (!isDesktop) return;
+    const el = sectionRef.current;
+    if (!el) return;
+    let rafId = 0;
+    let nextX = 0.5;
+    let nextY = 0.5;
+    let pending = false;
+
+    const flush = () => {
+      pending = false;
+      setMousePos({ x: nextX, y: nextY });
+    };
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = el.getBoundingClientRect();
+      nextX = (e.clientX - rect.left) / rect.width;
+      nextY = (e.clientY - rect.top) / rect.height;
+      if (!pending) {
+        pending = true;
+        rafId = requestAnimationFrame(flush);
+      }
+    };
+    el.addEventListener("mousemove", handleMouseMove, { passive: true });
+    return () => {
+      el.removeEventListener("mousemove", handleMouseMove);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
+  }, [isDesktop]);
 
   return (
     <section
       id="hero"
       ref={sectionRef}
-      className="relative min-h-[calc(100vh-1rem)] flex flex-col justify-center items-center text-center px-6 pt-16 pb-8 bg-grid overflow-hidden md:overflow-visible"
+      className="relative min-h-[calc(100vh-1rem)] flex flex-col justify-center items-center text-center px-6 pt-24 md:pt-20 pb-8 bg-grid overflow-hidden md:overflow-visible"
     >
-      {/* Animated gradient orbs that follow mouse */}
-      <motion.div
-        className="orb w-[500px] h-[500px] bg-primary/30"
-        animate={{
-          x: `${mousePos.x * 100 - 50}%`,
-          y: `${mousePos.y * 100 - 50}%`,
-        }}
-        transition={{ type: "spring", damping: 30, stiffness: 100 }}
-        style={{ top: "10%", left: "20%" }}
-      />
-      <motion.div
-        className="orb w-[400px] h-[400px] bg-secondary/20"
-        animate={{
-          x: `${(1 - mousePos.x) * 80 - 40}%`,
-          y: `${(1 - mousePos.y) * 80 - 40}%`,
-        }}
-        transition={{ type: "spring", damping: 40, stiffness: 80 }}
-        style={{ bottom: "10%", right: "15%" }}
-      />
-      <motion.div
-        className="orb w-[300px] h-[300px] bg-indigo-500/15"
-        animate={{
-          x: `${mousePos.x * 60 - 30}%`,
-          y: `${(1 - mousePos.y) * 60 - 30}%`,
-        }}
-        transition={{ type: "spring", damping: 50, stiffness: 60 }}
-        style={{ top: "40%", right: "30%" }}
-      />
+      {/* Animated gradient orbs that follow mouse — desktop only */}
+      {isDesktop && (
+        <>
+          <motion.div
+            className="orb w-[500px] h-[500px] bg-primary/30"
+            animate={{
+              x: `${mousePos.x * 100 - 50}%`,
+              y: `${mousePos.y * 100 - 50}%`,
+            }}
+            transition={{ type: "spring", damping: 30, stiffness: 100 }}
+            style={{ top: "10%", left: "20%" }}
+          />
+          <motion.div
+            className="orb w-[400px] h-[400px] bg-secondary/20"
+            animate={{
+              x: `${(1 - mousePos.x) * 80 - 40}%`,
+              y: `${(1 - mousePos.y) * 80 - 40}%`,
+            }}
+            transition={{ type: "spring", damping: 40, stiffness: 80 }}
+            style={{ bottom: "10%", right: "15%" }}
+          />
+        </>
+      )}
 
-      {/* Floating particles */}
-      {Array.from({ length: 20 }).map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-1 h-1 rounded-full bg-primary/40"
-          style={{
-            top: `${10 + (i * 37) % 80}%`,
-            left: `${5 + (i * 53) % 90}%`,
-          }}
-          animate={{
-            y: [0, -30, 0],
-            opacity: [0.2, 0.8, 0.2],
-            scale: [1, 1.5, 1],
-          }}
-          transition={{
-            duration: 3 + (i % 3),
-            repeat: Infinity,
-            delay: i * 0.3,
-            ease: "easeInOut",
-          }}
-        />
-      ))}
+      {/* Floating particles — desktop only, reduced count */}
+      {isDesktop &&
+        Array.from({ length: 10 }).map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 rounded-full bg-primary/40"
+            style={{
+              top: `${10 + (i * 37) % 80}%`,
+              left: `${5 + (i * 53) % 90}%`,
+              willChange: "transform, opacity",
+            }}
+            animate={{
+              y: [0, -30, 0],
+              opacity: [0.2, 0.8, 0.2],
+            }}
+            transition={{
+              duration: 3 + (i % 3),
+              repeat: Infinity,
+              delay: i * 0.3,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
 
       <div className="relative z-10 max-w-4xl mx-auto mt-4">
         {/* Badge */}
@@ -163,7 +183,7 @@ export default function HeroSection() {
         </motion.div>
 
         {/* Heading with letter-by-letter animation */}
-        <h1 className="text-6xl md:text-8xl font-black tracking-tight text-text-primary leading-[1.1] mb-6">
+        <h1 className="text-4xl md:text-8xl font-black tracking-tight text-text-primary leading-[1.1] mb-6">
           <AnimatedText text="Connecting Ideas." />
           <br />
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#3B82F6] via-[#6366F1] to-[#8B5CF6]">
@@ -173,7 +193,7 @@ export default function HeroSection() {
 
         {/* Paragraph with blur-in reveal */}
         <motion.p
-          className="text-text-secondary text-base md:text-xl max-w-2xl mx-auto mb-8 font-medium leading-relaxed"
+          className="text-text-secondary text-sm md:text-xl w-full md:max-w-2xl mx-auto mb-8 font-medium leading-relaxed"
           initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 1, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -184,7 +204,7 @@ export default function HeroSection() {
 
         {/* Buttons with staggered scale-up */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-5 justify-center"
+          className="flex flex-col md:flex-row items-center  gap-5 justify-center"
           initial="hidden"
           animate="visible"
           variants={{
@@ -209,7 +229,7 @@ export default function HeroSection() {
               }}
             >
               <a href={btn.href} className="cursor-pointer">
-                <Button className="py-1 h-12 flex justify-center items-center" variant={btn.variant}>
+                <Button className="py-1 h-12 flex justify-center items-center text-xs md:text-base text-nowrap" variant={btn.variant}>
                   {btn.label}
                 </Button>
               </a>
