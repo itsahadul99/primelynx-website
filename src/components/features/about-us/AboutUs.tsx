@@ -162,7 +162,7 @@ function TeamSlider() {
                       {member.skills.map((skill) => (
                         <span
                           key={skill}
-                          className="px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider rounded-lg bg-white/5 text-text-secondary border border-white/5 group-hover:border-primary/20 group-hover:text-primary transition-colors duration-300"
+                          className="px-1.5 py-1 text-[9px] font-bold uppercase tracking-wider rounded-lg bg-white/5 text-text-secondary border border-white/5 group-hover:border-primary/20 group-hover:text-primary transition-colors duration-300"
                         >
                           {skill}
                         </span>

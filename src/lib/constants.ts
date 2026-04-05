@@ -32,71 +32,67 @@ export const aboutStats = [
 ];
 
 export const teamMembers = [
-
   {
     name: "Mohammad Sarwar",
     role: "Founder & CEO",
     image: "/team/ceo.jpeg",
-    skills: ["Business Strategy", "Product Vision", "Client Relations", "Team Leadership"],
-
+    skills: ["Business Strategy", "Product Vision", "IT Specialist", "Agile Champion", "Client Relations", "Team Leadership"],
   },
   {
     name: "Shahadat Hossain",
     role: "Project Manager",
     image: "/team/shahadat_pm.jpeg",
-    skills: ["Agile Methodologies", "Scrum Mastery", "Stakeholder Communication", "Risk Management"],
+    skills: ["Quality Assurance", "Scrum Mastery", "Stakeholder Communication", "Risk Management", "Agile Methodology"],
   },
   {
     name: "Intishar-Ul Islam",
-    role: "Lead Backend Developer",
+    role: "Full Stack Lead Developer",
     image: "/team/inthishar_backend.jpeg",
-    skills: ["Rust", "Axum", "Dart", "PostgreSQL", "SQLite"],
+    skills: ["Principal Architect", "Data Engineering", "Rust", "Axum", "Dart", "PostgreSQL", "SQLite"],
   },
   {
     name: "Ahsan Ullah Mubin",
     role: "Backend Developer",
     image: "/team/ahsan_backend.jpeg",
-    skills: ["C", "C++", "Node.js", "Express", "PHP", "PostgreSQL", "SQLite", "Redis", "Prisma", "Problem Solving"],
-
-  },
-  {
-    name: "Ahadul Islam",
-    role: "Front End Developer",
-    image: "/team/ahadul_frontend.jpeg",
-    skills: ["Next.js", "React", "TypeScript", "Tailwind", "Shadcn", "Ant Design", "Figma"],
-  },
-  {
-    name: "Naushad Hasan",
-    role: "Dev Ops Engineer",
-    image: "/team/naushad_devops.jpeg",
-    skills: ["Docker", "Kubernetes", "CI/CD", "AWS", "Azure", "GCP", "Terraform"],
-  },
-  {
-    name: "Sabik Alam Rahat",
-    role: "Senior Mobile Application Developer",
-    image: "/team/rahat_mobile_application.jpeg",
-    skills: ["Flutter", "Dart", "Android/iOS", "Riverpod", "GetX", "Hive"],
+    skills: ["Node.js", "Express", "PHP", "C/C++", "PostgreSQL", "Redis", "Prisma", "Problem Solving"],
   },
   {
     name: "Remon Ahammad",
     role: "Backend Engineer",
     image: "/team/backend_remon.jpeg",
-    skills: ["Flutter", "Rust", "Dart", "Android/iOS",],
+    skills: ["Rust", "PostgreSQL", "MySQL", "Prisma", "Redis", "Flutter", "Dart", "Backend Architecture"],
+  },
+  {
+    name: "Ahadul Islam",
+    role: "Front End Developer",
+    image: "/team/ahadul_frontend.jpeg",
+    skills: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Shadcn UI", "Ant Design", "Figma"],
+  },
+  {
+    name: "Sabik Alam Rahat",
+    role: "Senior Mobile Developer",
+    image: "/team/rahat_mobile_application.jpeg",
+    skills: ["Flutter", "Dart", "React Native", "Riverpod", "GetX", "Hive", "Android/iOS Development"],
+  },
+  {
+    name: "Naushad Hasan",
+    role: "DevOps Engineer",
+    image: "/team/naushad_devops.jpeg",
+    skills: ["Docker", "Kubernetes", "CI/CD", "AWS", "Azure", "GCP", "Terraform", "Ansible"],
   },
   {
     name: "Al Shahariar Kabir Tuhin",
     role: "SQA Engineer",
     image: "/team/sqa_shahariar.jpeg",
-    skills: ["Manual Testing", "Automated Testing", "Test Planning", "Bug Tracking"],
+    skills: ["Manual Testing", "Automated Testing", "Test Planning", "Bug Tracking", "Performance Testing"],
   },
   {
     name: "Ferdous Zaman",
     role: "UX/UI Designer",
     image: "/team/ui_ferdous.jpeg",
-    skills: ["Figma", "Adobe XD", "User Research", "Wireframing", "Prototyping"],
+    skills: ["Figma", "Adobe XD", "User Research", "Wireframing", "Prototyping", "Visual Design"],
   },
 ];
-
 export const services = [
   {
     icon: "code",
