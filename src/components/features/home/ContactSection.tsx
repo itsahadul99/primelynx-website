@@ -23,13 +23,13 @@ export default function ContactSection() {
         <form className="flex flex-col gap-5 max-w-xl mx-auto mb-16" onSubmit={(e) => e.preventDefault()}>
           <div className="relative group">
             <input
-              className="w-full bg-surface-elevated border border-white/5 rounded-2xl px-8 py-6 focus:ring-2 focus:ring-primary text-text-primary placeholder:text-text-secondary/50 outline-none transition-all"
+              className="w-full bg-surface-elevated/95 border border-white/10 rounded-2xl px-8 py-6 focus:ring-2 focus:ring-primary text-text-primary placeholder:text-text-secondary/55 outline-none transition-all"
               placeholder="Enter your email address"
               type="email"
             />
             <button
               type="submit"
-              className="absolute right-3 top-3 bottom-3 px-8 bg-primary text-white rounded-xl font-black hover:bg-primary/90 transition-all active:scale-95"
+              className="absolute right-3 top-3 bottom-3 px-8 bg-linear-to-r from-primary to-secondary text-white rounded-xl font-black hover:opacity-95 transition-all active:scale-95"
             >
               Get Started
             </button>

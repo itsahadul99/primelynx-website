@@ -31,8 +31,9 @@ function MarqueeRow({ items, reverse = false }: { items: TechItem[]; reverse?: b
 
 export default function TechStackSection() {
   return (
-    <section className="py-20 md:py-40 pb-16 overflow-hidden relative border-y border-white/5 bg-[#0D1626]/50">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-primary/5 rounded-full blur-[150px] pointer-events-none -z-10" />
+    <section className="py-20 md:py-40 pb-16 overflow-hidden relative border-y border-white/5 bg-linear-to-b from-background via-surface/75 to-background">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-primary/7 rounded-full blur-[150px] pointer-events-none -z-10" />
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/15 to-transparent pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-8 mb-24 text-center relative z-10">
         <motion.div

@@ -14,7 +14,7 @@ const variants: Record<ButtonVariant, string> = {
   primary:
     "bg-primary text-white hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.5)] hover:bg-primary/90",
   secondary:
-    "border border-white/10 bg-white/5 backdrop-blur text-text-primary hover:bg-white/10",
+    "border border-white/12 bg-white/7 backdrop-blur text-text-primary hover:bg-white/12 hover:border-white/20",
   tertiary:
     "text-primary hover:underline bg-transparent",
 };
