@@ -395,6 +395,38 @@ export const projects = [
       techStack: ["Flutter", "Dart", "Laravel", "Firebase", "GetX", "HLS", "Stripe", "Razorpay", "PayPal"],
     },
   },
+  {
+    title: "Prabashi Bangla Network - Community Marketplace",
+    description: "A full-stack community marketplace and classified-ads platform for the Bangladeshi diaspora in the UK — connecting members through jobs, services, rentals, events, and trusted professional listings.",
+    image: "/demo.jpg",
+    tags: [
+      { label: "Next.js", color: "primary" },
+      { label: "PostgreSQL", color: "secondary" },
+    ],
+    caseStudy: {
+      overview:
+        "Prabashi Bangla Network is a full-stack community marketplace built with Next.js and Node.js, designed exclusively for the Bangladeshi diaspora in the UK. The platform allows community members to post and discover listings across jobs, buy/sell, rentals, events, community news, and professional services — all in one place. A dual-auth system (NextAuth OAuth + custom JWT), a rich category-template post form, a full admin panel with 8 management tabs, and a dynamic ad delivery system make this a production-grade community platform.",
+      challenge:
+        "The Bangladeshi diaspora in the UK lacked a centralized digital space to find trusted community services, post job openings, list goods for sale, or connect with local professionals. Existing general-purpose platforms offered no cultural context, no community trust signals, and no professional directory tailored to their needs. Moderating user-generated content at scale while maintaining a clean and trustworthy experience was an additional operational challenge.",
+      solution:
+        "We built a category-aware post system with dynamic field templates that adapt form fields and Zod validation schemas per category (jobs, rentals, professional services, etc.). A dual authentication architecture combines NextAuth v5 OAuth (Google & Facebook) with a custom backend JWT, exchanged securely via server actions that never expose the API to the browser. An 8-tab admin panel covers users, posts, reports, audit logs, categories, cities, professional services, and advertisements — with immutable audit trails for all moderation actions.",
+      features: [
+        "Category-template post form with dynamic fields and per-category Zod validation",
+        "Dual auth: NextAuth OAuth (Google & Facebook) with backend JWT bridge via server actions",
+        "8-tab admin panel: users, posts, reports, audit logs, categories, cities, services & ads",
+        "Zustand-powered saved-posts cache with optimistic UI updates and session-scoped clearing",
+        "Dynamic ad delivery system with two staggered AdSliders and adaptive page sizing",
+        "URL-driven filtering with namespaced query params and transition-based list dimming",
+      ],
+      results: [
+        { metric: "8", label: "Admin management tabs" },
+        { metric: "7+", label: "Post categories" },
+        { metric: "Zero API", label: "Exposure to browser" },
+        { metric: "Immutable", label: "Audit log for all mod actions" },
+      ],
+      techStack: ["Next.js", "React", "TypeScript", "Node.js", "Express", "PostgreSQL", "Prisma", "NextAuth", "Zustand", "Framer Motion", "Tailwind CSS", "shadcn/ui", "Zod"],
+    },
+  },
 ];
 
 export const techCategories = [
