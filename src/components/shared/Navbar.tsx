@@ -68,10 +68,10 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full z-50 bg-background/90 backdrop-blur-md border-b border-white/5">
       <div className="flex justify-between items-center px-8 py-5 max-w-7xl mx-auto">
         <a href="/" className="flex items-center gap-2">
-          <img src="/logo.png" alt="Logo" className="w-12 h-12" />
-          <span className="text-xl font-extrabold tracking-tighter text-text-primary">
+          <img src="/logo.png" alt="Logo" className="h-12" />
+          {/* <span className="text-xl font-extrabold tracking-tighter text-text-primary">
             {siteConfig.name}
-          </span>
+          </span> */}
         </a>
 
         {/* Desktop Links */}

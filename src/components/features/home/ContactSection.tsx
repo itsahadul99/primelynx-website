@@ -105,13 +105,13 @@ export default function ContactSection() {
             </div>
           </form>
 
-          <div className="flex justify-center gap-12 text-text-secondary font-black tracking-widest text-sm uppercase mt-10">
+          {/* <div className="flex justify-center gap-12 text-text-secondary font-black tracking-widest text-sm uppercase mt-10">
             {socialLinks.map((link) => (
               <a key={link.label} href={link.href} className="hover:text-primary transition-colors">
                 {link.label}
               </a>
             ))}
-          </div>
+          </div> */}
         </motion.div>
       </section>
     </>

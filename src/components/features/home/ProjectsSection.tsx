@@ -20,7 +20,7 @@ const accents = [
   { glow: "bg-indigo-500", text: "text-indigo-400", soft: "bg-indigo-500/10", border: "border-indigo-500/20" },
 ];
 
-function slugify(title: string) {
+export function slugify(title: string) {
   return title
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
@@ -45,12 +45,12 @@ function ProjectCard({
   const slug = slugify(project.title);
   const topResults = project.caseStudy.results.slice(0, featured ? 3 : 2);
   const topStack = project.caseStudy.techStack.slice(0, featured ? 6 : 4);
+  const remainingCount = project.caseStudy.techStack.length - topStack.length;
 
   return (
     <motion.div
-      className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-surface flex flex-col ${
-        featured ? "min-h-130 md:min-h-150" : "min-h-105 md:min-h-120"
-      }`}
+      className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-surface flex flex-col ${featured ? "min-h-130 md:min-h-150" : "min-h-105 md:min-h-120"
+        }`}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
@@ -99,7 +99,7 @@ function ProjectCard({
               return (
                 <span
                   key={tag.label}
-                  className={`text-[10px] uppercase font-black tracking-[0.15em] px-3.5 py-1.5 ${colors.bg} ${colors.text} rounded-full backdrop-blur-sm border border-white/5`}
+                  className={`text-[10px] uppercase font-black tracking-[0.15em] animate-pulse px-3.5 py-1.5 ${colors.bg} ${colors.text} rounded-full backdrop-blur-sm border border-white/5`}
                 >
                   {tag.label}
                 </span>
@@ -109,39 +109,46 @@ function ProjectCard({
 
           {/* Title */}
           <h3
-            className={`font-black tracking-tight text-text-primary mb-3 leading-[1.1] ${
-              featured ? "text-4xl md:text-5xl lg:text-6xl" : "text-2xl md:text-3xl"
-            }`}
+            className={`font-black tracking-tight text-text-primary mb-3 leading-[1.1] ${featured ? "text-4xl md:text-5xl lg:text-6xl" : "text-2xl md:text-3xl"
+              }`}
           >
             {project.title}
           </h3>
 
           {/* Description */}
           <p
-            className={`text-text-secondary mb-6 leading-relaxed max-w-xl ${
-              featured ? "text-base md:text-lg" : "text-sm"
-            }`}
+            className={`text-text-secondary mb-6 leading-relaxed max-w-xl ${featured ? "text-base md:text-lg" : "text-sm"
+              }`}
           >
             {project.description}
           </p>
 
-          {/* Code-style tech stack */}
-          <div className="mb-6 rounded-xl border border-white/5 bg-background/60 backdrop-blur-sm px-4 py-3 font-mono text-xs md:text-[13px] leading-relaxed max-w-full overflow-hidden">
-            <span className="text-text-secondary/50">const </span>
-            <span className={accent.text}>stack</span>
-            <span className="text-text-secondary/50"> = [</span>
-            <span className="block pl-4 text-text-secondary/90 break-words">
-              {topStack.map((tech, i) => (
-                <span key={tech}>
-                  <span className="text-secondary">&quot;{tech}&quot;</span>
-                  {i < topStack.length - 1 && <span className="text-text-secondary/50">, </span>}
+          {/* Pulsing Modern Tech Stack Pills */}
+          <div className="mb-6">
+            <div className="text-[11px] uppercase tracking-wider font-semibold text-text-secondary/60 mb-2.5 flex items-center gap-2">
+              <span className="relative flex h-2 w-2">
+                <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${accent.glow || "bg-primary"}`} />
+                <span className={`relative inline-flex rounded-full h-2 w-2 ${accent.glow || "bg-primary"}`} />
+              </span>
+              Technologies Used
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {topStack.map((tech) => (
+                <span
+                  key={tech}
+                  className="group/pill relative px-3 py-1.5 rounded-lg border animate-pulse  border-white/10 bg-background/50 backdrop-blur-md text-xs font-medium text-text-secondary hover:text-white transition-all duration-300"
+                >
+                  {/* Subtle hover & continuous pulse accent line inside pill */}
+                  <span className={`absolute inset-x-0 bottom-0 h-[2px] rounded-b-lg opacity-40 group-hover/pill:opacity-100 transition-opacity duration-300 ${accent.glow || "bg-primary"}`} />
+                  {tech}
                 </span>
               ))}
-              {project.caseStudy.techStack.length > topStack.length && (
-                <span className="text-text-secondary/40"> /* +{project.caseStudy.techStack.length - topStack.length} more */</span>
+              {remainingCount > 0 && (
+                <span className="px-2.5 py-1.5 rounded-lg border border-white/5 bg-white/5 text-xs font-medium text-text-secondary/60">
+                  +{remainingCount} more
+                </span>
               )}
-            </span>
-            <span className="text-text-secondary/50">];</span>
+            </div>
           </div>
         </div>
 

@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { MaterialIcon } from "@/components/ui";
 import { projects } from "@/lib/constants";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect } from "react";
+import { slugify } from "./ProjectsSection";
 
 type Project = (typeof projects)[number];
 
@@ -81,12 +82,12 @@ export default function CaseStudyModal({
 
           {/* Modal content */}
           <motion.div
-            className="relative w-full max-h-[80vh] overflow-y-auto custom-scrollbar max-w-4xl mx-4 my-8 md:my-16 rounded-3xl border border-white/10 bg-surface overflow-x-hidden"
+            className="relative w-full max-h-[85vh] overflow-y-auto custom-scrollbar max-w-4xl mx-4 my-8 md:my-12 rounded-3xl border border-white/10 bg-surface overflow-x-hidden"
             variants={modal}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Hero — code-window aesthetic */}
-            <div className="relative h-64 md:h-80 overflow-hidden bg-background">
+            {/* Hero Banner Header */}
+            <div className="relative h-44 md:h-52 overflow-hidden bg-background">
               {/* Grid background */}
               <div
                 className="absolute inset-0 opacity-[0.08]"
@@ -100,43 +101,28 @@ export default function CaseStudyModal({
               <div className="absolute -top-32 -left-32 w-80 h-80 rounded-full blur-[120px] opacity-30 bg-primary" />
               <div className="absolute -bottom-32 -right-32 w-80 h-80 rounded-full blur-[120px] opacity-20 bg-secondary" />
 
-              {/* Window chrome */}
+              {/* Top Chrome / Path Bar */}
               <div className="relative z-10 flex items-center gap-2 px-5 py-3.5 border-b border-white/5 bg-background/40 backdrop-blur-sm">
                 <span className="w-2.5 h-2.5 rounded-full bg-red-500/60" />
                 <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
                 <span className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
                 <span className="ml-3 font-mono text-[11px] text-text-secondary/70 tracking-wide truncate">
-                  ~/primelynx/case-study
+                  ~/case-studies/{slugify(project.title)}
                 </span>
               </div>
 
-              {/* Terminal-style content */}
-              <div className="relative z-10 px-6 md:px-12 py-6 font-mono text-xs md:text-sm leading-relaxed">
-                <div className="text-text-secondary/60">
-                  <span className="text-primary">$</span> cat project.json
+              {/* Hero Banner Accent Content */}
+              <div className="relative z-10 px-6 md:px-12 py-6 flex items-center justify-between">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-primary/20 bg-primary/10 text-primary text-xs font-semibold">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
+                  </span>
+                  Featured Case Study
                 </div>
-                <div className="mt-2 text-text-secondary/50">{`{`}</div>
-                <div className="pl-4 text-text-secondary/80">
-                  <span className="text-secondary">&quot;name&quot;</span>
-                  <span className="text-text-secondary/50">: </span>
-                  <span className="text-primary">&quot;{project.title}&quot;</span>
-                  <span className="text-text-secondary/50">,</span>
-                </div>
-                <div className="pl-4 text-text-secondary/80">
-                  <span className="text-secondary">&quot;tags&quot;</span>
-                  <span className="text-text-secondary/50">: [</span>
-                  {project.tags.map((tag, i) => (
-                    <span key={tag.label}>
-                      <span className="text-indigo-400">&quot;{tag.label}&quot;</span>
-                      {i < project.tags.length - 1 && <span className="text-text-secondary/50">, </span>}
-                    </span>
-                  ))}
-                  <span className="text-text-secondary/50">]</span>
-                </div>
-                <div className="text-text-secondary/50">{`}`}</div>
               </div>
 
-              <div className="absolute inset-x-0 bottom-0 h-20 bg-linear-to-t from-surface to-transparent pointer-events-none" />
+              <div className="absolute inset-x-0 bottom-0 h-16 bg-linear-to-t from-surface to-transparent pointer-events-none" />
 
               {/* Close button */}
               <button
@@ -147,8 +133,8 @@ export default function CaseStudyModal({
               </button>
             </div>
 
-            {/* Body */}
-            <div className="px-6 md:px-12 pb-10 -mt-20 relative z-10">
+            {/* Modal Main Body (All content rendered ONCE here) */}
+            <div className="px-6 md:px-12 pb-10 -mt-10 relative z-10">
               {/* Tags */}
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tags.map((tag) => {
@@ -250,7 +236,7 @@ export default function CaseStudyModal({
                   {cs.techStack.map((tech) => (
                     <span
                       key={tech}
-                      className="text-xs font-bold px-4 py-2 rounded-full bg-white/5 text-text-secondary border border-white/5"
+                      className="text-xs font-medium px-4 py-2 rounded-xl bg-background/60 text-text-secondary border border-white/10 backdrop-blur-sm"
                     >
                       {tech}
                     </span>

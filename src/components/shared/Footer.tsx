@@ -10,10 +10,10 @@ export default function Footer() {
         {/* Brand */}
         <div className="space-y-8">
           <div className="flex items-center gap-2">
-            <img src="/logo.png" alt="Logo" className="w-12 h-12" />
-            <span className="text-xl font-black tracking-tighter text-text-primary">
+            <img src="/logo.png" alt="Logo" className="h-fit object-contain" />
+            {/* <span className="text-xl font-black tracking-tighter text-text-primary">
               {siteConfig.name}
-            </span>
+            </span> */}
           </div>
           <p className="text-text-secondary leading-relaxed max-w-xs font-medium">
             Engineering digital excellence through cutting-edge design and development.

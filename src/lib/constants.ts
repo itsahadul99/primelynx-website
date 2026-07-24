@@ -3,7 +3,7 @@ export const siteConfig = {
   title: "Primelynx | Connecting Ideas, Building the Future",
   description:
     "We design and engineer high-performance digital ecosystems that empower brands to redefine their market presence.",
-  url: "https://primelynx.tech",
+  url: "https://primelynx.com",
   email: "primelynx.bd@gmail.com",
   phone: "(718)869-0880",
   address: "US Address: 421 Grant Ave, Brooklyn, NY 11208",
@@ -491,7 +491,7 @@ export const footerLinks = {
     { label: "Portfolio", href: "#work" },
     { label: "Services", href: "#services" },
     { label: "About Us", href: "#about" },
-    { label: "Careers", href: "#" },
+    // { label: "Careers", href: "#" },
   ],
   legal: [
     { label: "Privacy Policy", href: "#" },
@@ -502,8 +502,8 @@ export const footerLinks = {
 };
 
 export const socialLinks = [
-  { label: "Twitter", href: "#" },
-  { label: "LinkedIn", href: "#" },
-  { label: "GitHub", href: "#" },
-  { label: "Dribbble", href: "#" },
+  // { label: "Twitter", href: "#" },
+  // { label: "LinkedIn", href: "#" },
+  { label: "GitHub", href: "https://github.com/primelynxbd" },
+  // { label: "Dribbble", href: "#" },
 ];
